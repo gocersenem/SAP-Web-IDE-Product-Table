@@ -1,0 +1,46 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="DynamicTable.DynamicTable.controller.Main"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Store">
+				<content>
+					<Table id="idProductsTable" items="{MainModel>/ProductCollection}">
+						<headerToolbar>
+							<OverflowToolbar>
+								<Title text="Products" level="H2"/>
+								<ToolbarSpacer/>
+								<Button tooltip="Sort" icon="sap-icon://sort" press="handleSortButtonPressed"/>
+								<Button tooltip="Filter" icon="sap-icon://filter" press="handleFilterButtonPressed"/>
+								<Button tooltip="Group" icon="sap-icon://group-2" press="handleGroupButtonPressed"/>
+								<ToggleButton icon="sap-icon://menu" tooltip="Enable Custom Context Menu" press="onToggleContextMenu"/>
+							</OverflowToolbar>
+						</headerToolbar>
+						<infoToolbar>
+							<OverflowToolbar id="vsdFilterBar" visible="false">
+								<Text id="vsdFilterLabel"/>
+							</OverflowToolbar>
+						</infoToolbar>
+						<columns>
+							<Column width="12em"><Text text="Product"/></Column>
+							<Column minScreenWidth="Tablet" demandPopin="true"><Text text="Description"/></Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="End"><Text text="Category"/></Column>
+							<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center"><Text text="Image"/></Column>
+							<Column hAlign="End"><Text text="Price"/></Column>
+						</columns>
+						<items>
+							<ColumnListItem vAlign="Middle">
+								<cells>
+									<ObjectIdentifier title="{MainModel>title}" />
+									<Text text=" {MainModel>description} "/>
+									<Text text="{MainModel>category}"/>
+									<Image src="{MainModel>image}" width="4em" height="4em"></Image>
+									<Text text="{MainModel>price}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

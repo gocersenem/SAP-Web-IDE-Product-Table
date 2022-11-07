@@ -1,0 +1,11 @@
+<c:FragmentDefinition xmlns="sap.m" xmlns:c="sap.ui.core" xmlns:l="sap.ui.layout">
+	<ViewSettingsDialog
+		confirm=".handleGroupDialogConfirm"
+		reset=".resetGroupDialog"
+	>
+		<groupItems>
+			<ViewSettingsItem text="Category" key="category" />
+			<ViewSettingsItem text="Price" key="price" />
+		</groupItems>
+	</ViewSettingsDialog>
+</c:FragmentDefinition>

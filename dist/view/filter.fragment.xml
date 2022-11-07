@@ -1,0 +1,18 @@
+<c:FragmentDefinition xmlns="sap.m" xmlns:c="sap.ui.core" xmlns:l="sap.ui.layout">
+	<ViewSettingsDialog title="Filter"  confirm="handleFilterDialogConfirm">
+		<filterItems>
+			<ViewSettingsFilterItem multiSelect="true" text="Category" key="category" items="{MainModel>/category}">
+				<items >
+					<ViewSettingsItem text="{MainModel>category}" key="category___EQ___{MainModel>category}___X"/>
+				</items>
+			</ViewSettingsFilterItem>
+			<ViewSettingsFilterItem text="Price" key="price" multiSelect="false">
+				<items>
+					<ViewSettingsItem text="Less Than 100" key="price___LE___100___X"/>
+					<ViewSettingsItem text="Between 100 and 1000" key="price___BT___100___1000"/>
+					<ViewSettingsItem text="More Than 1000" key="price___GT___1000___X"/>
+				</items>
+			</ViewSettingsFilterItem>
+		</filterItems>
+	</ViewSettingsDialog>
+</c:FragmentDefinition>

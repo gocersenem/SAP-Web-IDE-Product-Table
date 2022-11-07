@@ -1,0 +1,5 @@
+<c:FragmentDefinition xmlns="sap.m" xmlns:c="sap.ui.core" xmlns:l="sap.ui.layout" controllerName="DynamicTable.DynamicTable.controller.Main">
+	<ViewSettingsDialog filterDetailPageOpened="setFilterItem"  title="Filter"   confirm="handleFilterDialogConfirm">
+		<filterItems ></filterItems>
+	</ViewSettingsDialog>
+</c:FragmentDefinition>

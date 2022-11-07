@@ -1,0 +1,5 @@
+<c:FragmentDefinition xmlns="sap.m" xmlns:c="sap.ui.core" xmlns:l="sap.ui.layout">
+	<ViewSettingsDialog confirm=".handleGroupDialogConfirm" reset=".resetGroupDialog">
+		<groupItems ></groupItems>
+	</ViewSettingsDialog>
+</c:FragmentDefinition>

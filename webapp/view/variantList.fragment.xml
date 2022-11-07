@@ -1,0 +1,72 @@
+<c:FragmentDefinition xmlns:mvc="sap.ui.core.mvc" xmlns:unified="sap.ui.unified" xmlns:t="sap.ui.Table" xmlns:c="sap.ui.core" xmlns="sap.m"
+	height="100%" controllerName="DynamicTable.DynamicTable.controller.Main">
+	<Dialog>
+		<t:Table id="idList" rows="{MainModel>/variant}" selectionMode="Single" visibleRowCount="3" >
+			<t:columns>
+					<t:Column>
+					<Label text="Variant ID"/>
+					<t:template>
+						<Text text="{MainModel>id}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+				<t:Column>
+					<Label text="Variant Name"/>
+					<t:template>
+						<Text text="{MainModel>name}" wrapping="false"/>
+					</t:template>
+				</t:Column>
+			</t:columns>
+		</t:Table>
+		<!--<SelectList id="idL" items="{MainModel>/variant}">-->
+		<!--	<c:Item text="{MainModel>name}" key="{MainModel>id}"/>-->
+		<!--</SelectList>-->
+		<!--	<Table-->
+		<!--			id="table"-->
+		<!--			rows="{/ProductCollection}"-->
+		<!--			selectionMode="SingleSelec"-->
+		<!--			visibleRowCount="7"-->
+		<!--			ariaLabelledBy="title">-->
+		<!--			<columns>-->
+		<!--				<Column>-->
+		<!--					<m:Label text="Product Name" />-->
+		<!--					<template>-->
+		<!--						<m:Text text="{Name}" wrapping="false"/>-->
+		<!--					</template>-->
+		<!--				</Column>-->
+		<!--</Table>-->
+		<FlexBox>
+			<Button text="Confirm" class="sapUiMediumMarginBegin" press="confirmVariant"></Button>
+			<Button text="Close" class="sapUiMediumMarginBegin" press="closeList"></Button>
+		</FlexBox>
+	</Dialog>
+	<!--<Dialog>-->
+	<!--		<Table-->
+	<!--				id="table"-->
+	<!--				rows=""-->
+	<!--				selectionMode="MultiToggle"-->
+	<!--				visibleRowCount="7"-->
+	<!--				setEnableGrouping="true"-->
+	<!--				>-->
+	<!--			<extension>-->
+	<!--				<m:OverflowToolbar>-->
+	<!--					<m:Title id="title" text="Products"/>-->
+	<!--					<m:ToolbarSpacer/>-->
+	<!--					<m:Label />-->
+	<!--					<m:Select >-->
+	<!--						<m:items>-->
+	<!--							<c:Item />-->
+	<!--							<c:Item key="Single" text="Single"/>-->
+	<!--							<c:Item key="None" text="None"/>-->
+	<!--						</m:items>-->
+	<!--					</m:Select>-->
+	<!--				</m:OverflowToolbar>-->
+	<!--			</extension>-->
+	<!--			<columns>-->
+	<!--				<Column >-->
+	<!--					<m:Label text="Status"/>-->
+	<!--						<m:Text text="{Status}" wrapping="false"/>-->
+	<!--				</Column>-->
+	<!--			</columns>-->
+	<!--		</Table>-->
+	<!--</Dialog>-->
+</c:FragmentDefinition>

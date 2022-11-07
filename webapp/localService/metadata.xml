@@ -1,0 +1,409 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZD_ENTI2_SRV" xml:lang="tr" sap:schema-version="1">
+            <EntityType Name="GetDeepEntity" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pernr"/>
+                </Key>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personel no." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="NavITList" Relationship="ZD_ENTI2_SRV.AssITList" FromRole="FromRole_AssITList" ToRole="ToRole_AssITList"/>
+                <NavigationProperty Name="NavETList" Relationship="ZD_ENTI2_SRV.AssETList" FromRole="FromRole_AssETList" ToRole="ToRole_AssETList"/>
+            </EntityType>
+            <EntityType Name="ITList" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pernr"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Üst birim" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personel no." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Subty" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Alt tip" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Objps" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Nesne tn." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sprps" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Blokaj gös." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Endda" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Gçrl.sonu" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Begda" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Gçrl.bşl." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Seqnr" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Bil.tipi kyt.no" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Aedtm" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Dğşk.tarihi" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Uname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Değiştiren" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Histo" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Tarihçe kaydı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Itxex" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Metin mevcut" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Refex" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Referans mvc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ordex" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Teyit mevcut" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Itbld" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Ekran denetimi" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Preas" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Dğşk.nedeni" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Flag1" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Flag2" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Flag3" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Flag4" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Rese1" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan (2 karakterli)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Rese2" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan (2 karakterli)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Grpvl" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Gruplama değeri" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Kurum Kodu" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Pers.alanı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Persg" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Çalışan gr." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Persk" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Çlşn.alt gr." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vdsk1" Type="Edm.String" Nullable="false" MaxLength="14" sap:unicode="false" sap:label="Org.anahtarı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Gsber" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="İş alanı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Btrtl" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Pers.alt alanı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Juper" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Tüzel kişilik" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Abkrs" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Bordro alt brm." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ansvh" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="İstihdam kşl." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kostl" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Masraf yeri" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Orgeh" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Org.birimi" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Plans" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Pozisyon" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stell" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="İş" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mstbr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Şef alanı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sacha" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Bordro sor." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sachp" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Pers.sorumlusu" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sachz" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Zm.vr.grş.sor." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sname" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Soyad, ad" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ename" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Çlşn/bşv.adı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Otype" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Nesne tipi" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sbmod" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Grup" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kokrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Kontrol kodu" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fistl" Type="Edm.String" Nullable="false" MaxLength="16" sap:unicode="false" sap:label="Mali merkez" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Geber" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Fonlar" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fkber" Type="Edm.String" Nullable="false" MaxLength="16" sap:unicode="false" sap:label="İşlev alanı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="GrantNbr" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Teşvik" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sgmnt" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Bölüm" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BudgetPd" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Bütçe dönemi" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zzdrm" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Durum" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ETList" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pernr"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Üst birim" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personel no." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Subty" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Alt tip" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Objps" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Nesne tn." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sprps" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Blokaj gös." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Endda" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Gçrl.sonu" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Begda" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Gçrl.bşl." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Seqnr" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Bil.tipi kyt.no" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Aedtm" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Dğşk.tarihi" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Uname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Değiştiren" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Histo" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Tarihçe kaydı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Itxex" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Metin mevcut" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Refex" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Referans mvc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ordex" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Teyit mevcut" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Itbld" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Ekran denetimi" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Preas" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Dğşk.nedeni" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Flag1" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Flag2" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Flag3" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Flag4" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Rese1" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan (2 karakterli)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Rese2" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan (2 karakterli)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Grpvl" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Gruplama değeri" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Usrty" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Tür" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Usrid" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Sistem tanıtıcısı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UsridLong" Type="Edm.String" Nullable="false" MaxLength="241" sap:unicode="false" sap:label="Uzun tn./no." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="List1" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="IPernr"/>
+                </Key>
+                <Property Name="IPernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personel no." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Üst birim" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personel no." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Subty" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Alt tip" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Objps" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Nesne tn." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sprps" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Blokaj gös." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="List" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pernr"/>
+                </Key>
+                <Property Name="IPernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personel no." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personel no." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Nachn" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Soyadı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vorna" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Adı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="PersonelAnaVeri" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="EResult"/>
+                </Key>
+                <Property Name="EResult" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="7 karakterli alan" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="NavISPersonel" Relationship="ZD_ENTI2_SRV.AssISPersonel" FromRole="FromRole_AssISPersonel" ToRole="ToRole_AssISPersonel"/>
+                <NavigationProperty Name="NavETPersonel" Relationship="ZD_ENTI2_SRV.AssETPersonel" FromRole="FromRole_AssETPersonel" ToRole="ToRole_AssETPersonel"/>
+            </EntityType>
+            <EntityType Name="ISPersonel" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pernr"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Üst birim" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personel no." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Subty" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Alt tip" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Objps" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Nesne tn." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sprps" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Blokaj gös." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Endda" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Gçrl.sonu" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Begda" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Gçrl.bşl." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Seqnr" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Bil.tipi kyt.no" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Aedtm" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Dğşk.tarihi" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Uname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Değiştiren" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Histo" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Tarihçe kaydı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Itxex" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Metin mevcut" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Refex" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Referans mvc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ordex" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Teyit mevcut" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Itbld" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Ekran denetimi" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Preas" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Dğşk.nedeni" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Flag1" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Flag2" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Flag3" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Flag4" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Rese1" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan (2 karakterli)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Rese2" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan (2 karakterli)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Grpvl" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Gruplama değeri" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Kurum Kodu" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Pers.alanı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Persg" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Çalışan gr." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Persk" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Çlşn.alt gr." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vdsk1" Type="Edm.String" Nullable="false" MaxLength="14" sap:unicode="false" sap:label="Org.anahtarı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Gsber" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="İş alanı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Btrtl" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Pers.alt alanı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Juper" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Tüzel kişilik" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Abkrs" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Bordro alt brm." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ansvh" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="İstihdam kşl." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kostl" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Masraf yeri" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Orgeh" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Org.birimi" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Plans" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Pozisyon" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stell" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="İş" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mstbr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Şef alanı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sacha" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Bordro sor." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sachp" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Pers.sorumlusu" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sachz" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Zm.vr.grş.sor." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sname" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Soyad, ad" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ename" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Çlşn/bşv.adı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Otype" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Nesne tipi" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sbmod" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Grup" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kokrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Kontrol kodu" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fistl" Type="Edm.String" Nullable="false" MaxLength="16" sap:unicode="false" sap:label="Mali merkez" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Geber" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Fonlar" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fkber" Type="Edm.String" Nullable="false" MaxLength="16" sap:unicode="false" sap:label="İşlev alanı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="GrantNbr" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Teşvik" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sgmnt" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Bölüm" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BudgetPd" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Bütçe dönemi" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zzdrm" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Durum" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ETPersonel" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pernr"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Üst birim" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personel no." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Subty" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Alt tip" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Objps" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Nesne tn." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sprps" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Blokaj gös." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Endda" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Gçrl.sonu" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Begda" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Gçrl.bşl." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Seqnr" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Bil.tipi kyt.no" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Aedtm" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Dğşk.tarihi" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Uname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Değiştiren" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Histo" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Tarihçe kaydı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Itxex" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Metin mevcut" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Refex" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Referans mvc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ordex" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Teyit mevcut" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Itbld" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Ekran denetimi" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Preas" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Dğşk.nedeni" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Flag1" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Flag2" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Flag3" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Flag4" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Rese1" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan (2 karakterli)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Rese2" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Ayrılan alan/kullanılmayan alan (2 karakterli)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Grpvl" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Gruplama değeri" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Usrty" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Tür" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Usrid" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Sistem tanıtıcısı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UsridLong" Type="Edm.String" Nullable="false" MaxLength="241" sap:unicode="false" sap:label="Uzun tn./no." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Mara" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Matnr"/>
+                </Key>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Malzeme" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ersda" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Yaratma tarihi" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ernam" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Yaratan" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Laeda" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Son değişiklik" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Aenam" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Değiştiren" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vpsta" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Tüm mlz.durumu" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pstat" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Bakım durumu" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lvorm" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="ÜB silme iştr." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mtart" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Malzeme türü" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Mbrsh" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Sektör" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matkl" Type="Edm.String" Nullable="false" MaxLength="9" sap:unicode="false" sap:label="Mal grubu" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="search_help" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Waers"/>
+                </Key>
+                <Property Name="Waers" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Para birimi" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="Ltext" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Uzun metin" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Zsearch" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Matnr"/>
+                </Key>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Malzeme" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Matkl" Type="Edm.String" Nullable="false" MaxLength="9" sap:unicode="false" sap:label="Mal grubu" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="New_SH" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Waers"/>
+                </Key>
+                <Property Name="Waers" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Para birimi" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="Ltext" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Uzun metin" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="PersonelExpand" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="IPernr"/>
+                </Key>
+                <Property Name="IPernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personel no." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="NavPersonelETExpand" Relationship="ZD_ENTI2_SRV.AssPersonelETExpand" FromRole="FromRole_AssPersonelETExpand" ToRole="ToRole_AssPersonelETExpand"/>
+            </EntityType>
+            <EntityType Name="PersonelETExpand" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pernr"/>
+                </Key>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personel no." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Nachn" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Soyadı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vorna" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Adı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="new_Expand" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="IPernr"/>
+                </Key>
+                <Property Name="IPernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personel no." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="Navnew_ET" Relationship="ZD_ENTI2_SRV.Assnew_ET" FromRole="FromRole_Assnew_ET" ToRole="ToRole_Assnew_ET"/>
+            </EntityType>
+            <EntityType Name="new_ET" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Pernr"/>
+                </Key>
+                <Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personel no." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Nachn" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Soyadı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Vorna" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Adı" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="AssETList" sap:content-version="1">
+                <End Type="ZD_ENTI2_SRV.GetDeepEntity" Multiplicity="0..1" Role="FromRole_AssETList"/>
+                <End Type="ZD_ENTI2_SRV.ETList" Multiplicity="*" Role="ToRole_AssETList"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_AssETList">
+                        <PropertyRef Name="Pernr"/>
+                    </Principal>
+                    <Dependent Role="ToRole_AssETList">
+                        <PropertyRef Name="Pernr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="AssITList" sap:content-version="1">
+                <End Type="ZD_ENTI2_SRV.GetDeepEntity" Multiplicity="0..1" Role="FromRole_AssITList"/>
+                <End Type="ZD_ENTI2_SRV.ITList" Multiplicity="1" Role="ToRole_AssITList"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_AssITList">
+                        <PropertyRef Name="Pernr"/>
+                    </Principal>
+                    <Dependent Role="ToRole_AssITList">
+                        <PropertyRef Name="Pernr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="AssPersonelETExpand" sap:content-version="1">
+                <End Type="ZD_ENTI2_SRV.PersonelExpand" Multiplicity="0..1" Role="FromRole_AssPersonelETExpand"/>
+                <End Type="ZD_ENTI2_SRV.PersonelETExpand" Multiplicity="*" Role="ToRole_AssPersonelETExpand"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_AssPersonelETExpand">
+                        <PropertyRef Name="IPernr"/>
+                    </Principal>
+                    <Dependent Role="ToRole_AssPersonelETExpand">
+                        <PropertyRef Name="Pernr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Assnew_ET" sap:content-version="1">
+                <End Type="ZD_ENTI2_SRV.new_Expand" Multiplicity="0..1" Role="FromRole_Assnew_ET"/>
+                <End Type="ZD_ENTI2_SRV.new_ET" Multiplicity="*" Role="ToRole_Assnew_ET"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Assnew_ET">
+                        <PropertyRef Name="IPernr"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Assnew_ET">
+                        <PropertyRef Name="Pernr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="AssISPersonel" sap:content-version="1">
+                <End Type="ZD_ENTI2_SRV.PersonelAnaVeri" Multiplicity="1" Role="FromRole_AssISPersonel"/>
+                <End Type="ZD_ENTI2_SRV.ISPersonel" Multiplicity="1" Role="ToRole_AssISPersonel"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_AssISPersonel">
+                        <PropertyRef Name="EResult"/>
+                    </Principal>
+                    <Dependent Role="ToRole_AssISPersonel">
+                        <PropertyRef Name="Pernr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="AssETPersonel" sap:content-version="1">
+                <End Type="ZD_ENTI2_SRV.PersonelAnaVeri" Multiplicity="*" Role="FromRole_AssETPersonel"/>
+                <End Type="ZD_ENTI2_SRV.ETPersonel" Multiplicity="*" Role="ToRole_AssETPersonel"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_AssETPersonel">
+                        <PropertyRef Name="EResult"/>
+                    </Principal>
+                    <Dependent Role="ToRole_AssETPersonel">
+                        <PropertyRef Name="Pernr"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZD_ENTI2_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="GetDeepEntitySet" EntityType="ZD_ENTI2_SRV.GetDeepEntity" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ITListSet" EntityType="ZD_ENTI2_SRV.ITList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ETListSet" EntityType="ZD_ENTI2_SRV.ETList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="List1Set" EntityType="ZD_ENTI2_SRV.List1" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ListSet" EntityType="ZD_ENTI2_SRV.List" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="PersonelAnaVeriSet" EntityType="ZD_ENTI2_SRV.PersonelAnaVeri" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ISPersonelSet" EntityType="ZD_ENTI2_SRV.ISPersonel" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ETPersonelSet" EntityType="ZD_ENTI2_SRV.ETPersonel" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="MaraSet" EntityType="ZD_ENTI2_SRV.Mara" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="search_helpSet" EntityType="ZD_ENTI2_SRV.search_help" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZsearchSet" EntityType="ZD_ENTI2_SRV.Zsearch" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="New_SHSet" EntityType="ZD_ENTI2_SRV.New_SH" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="PersonelExpandSet" EntityType="ZD_ENTI2_SRV.PersonelExpand" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="PersonelETExpandSet" EntityType="ZD_ENTI2_SRV.PersonelETExpand" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="new_ExpandSet" EntityType="ZD_ENTI2_SRV.new_Expand" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="new_ETSet" EntityType="ZD_ENTI2_SRV.new_ET" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="Assnew_ETSet" Association="ZD_ENTI2_SRV.Assnew_ET" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="new_ExpandSet" Role="FromRole_Assnew_ET"/>
+                    <End EntitySet="new_ETSet" Role="ToRole_Assnew_ET"/>
+                </AssociationSet>
+                <AssociationSet Name="AssITListSet" Association="ZD_ENTI2_SRV.AssITList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="GetDeepEntitySet" Role="FromRole_AssITList"/>
+                    <End EntitySet="ITListSet" Role="ToRole_AssITList"/>
+                </AssociationSet>
+                <AssociationSet Name="AssETListSet" Association="ZD_ENTI2_SRV.AssETList" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="GetDeepEntitySet" Role="FromRole_AssETList"/>
+                    <End EntitySet="ETListSet" Role="ToRole_AssETList"/>
+                </AssociationSet>
+                <AssociationSet Name="AssPersonelETExpandSet" Association="ZD_ENTI2_SRV.AssPersonelETExpand" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="PersonelExpandSet" Role="FromRole_AssPersonelETExpand"/>
+                    <End EntitySet="PersonelETExpandSet" Role="ToRole_AssPersonelETExpand"/>
+                </AssociationSet>
+                <AssociationSet Name="AssETPersonelSet" Association="ZD_ENTI2_SRV.AssETPersonel" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="PersonelAnaVeriSet" Role="FromRole_AssETPersonel"/>
+                    <End EntitySet="ETPersonelSet" Role="ToRole_AssETPersonel"/>
+                </AssociationSet>
+                <AssociationSet Name="AssISPersonelSet" Association="ZD_ENTI2_SRV.AssISPersonel" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="PersonelAnaVeriSet" Role="FromRole_AssISPersonel"/>
+                    <End EntitySet="ISPersonelSet" Role="ToRole_AssISPersonel"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZD_ENTI2_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZD_ENTI2_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

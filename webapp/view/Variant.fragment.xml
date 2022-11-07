@@ -1,0 +1,17 @@
+<c:FragmentDefinition xmlns="sap.m" xmlns:c="sap.ui.core" xmlns:l="sap.ui.layout" controllerName="DynamicTable.DynamicTable.controller.Main">
+	<Dialog>
+		<content>
+			<SelectList id="idList2" items="{MainModel>/variant}">
+				<c:Item text="{MainModel>name}" key="{MainModel>id}"/>
+			</SelectList>
+			<l:Grid defaultSpan="L6 M6 S4">
+				<Label text="Variant Name:" design="Bold"></Label>
+				<Input placeholder="Variant name" value="{MainModel>/variantname}"></Input>
+			</l:Grid>
+			<FlexBox alignItems="Center">
+				<Button text="Save" class ="sapUiMediumMarginBegin" press="saveVariant"></Button>
+				<Button text="Close" class ="sapUiMediumMarginBegin" press="closeVariant"></Button>
+			</FlexBox>
+		</content>
+	</Dialog>
+</c:FragmentDefinition>
